@@ -19,29 +19,15 @@
 </head>
 <body id="top">
 <a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header">
-  <nav aria-label="Main navigation">
-    <a class="brand" href="#top"><img src="assets/logos/medevo.svg" width="35" height="31" alt=""><span>MedEvo</span></a>
-    <div class="nav-links">
-      <a href="#method">Method</a>
-      <a href="#evidence">Evidence</a>
-      <a href="#results">Results</a>
-      <a href="#resources">Resources</a>
-    </div>
-    <a class="nav-paper" href="assets/medevo.pdf">Read the paper <span aria-hidden="true">↗</span></a>
-  </nav>
-</header>
+<header class="site-header"><nav aria-label="Main navigation">
+  <a class="institution-brand" href="https://www.antgroup.com/" aria-label="Ant Group"><img src="assets/logos/ant-group-symbol.png" width="27" height="32" alt="Ant Group"><span>ANT<br>GROUP</span></a>
+  <a class="nav-project" href="#top">MedEvo</a>
+  <div class="nav-links"><a href="#method">Evolution</a><a href="#evidence">Evidence</a><a href="#resources">Resources</a></div>
+</nav></header>
 <main id="main">
-  <section class="hero" aria-labelledby="paper-title">
-    <div class="institution-logos" aria-label="Participating institutions">
-      <a href="https://www.zju.edu.cn/" aria-label="Zhejiang University"><img src="assets/logos/zhejiang-university-symbol.png" width="52" height="52" alt="Zhejiang University"></a>
-      <a href="https://www.antgroup.com/" aria-label="Ant Group"><img src="assets/logos/ant-group-symbol.png" width="52" height="52" alt="Ant Group"></a>
-      <a class="lab-logo" href="https://www.shlab.org.cn/" aria-label="Shanghai Artificial Intelligence Laboratory"><img src="assets/logos/shanghai-ai-lab-symbol.png" width="74" height="52" alt="Shanghai Artificial Intelligence Laboratory"></a>
-      <a href="https://www.sjtu.edu.cn/" aria-label="Shanghai Jiao Tong University"><img src="assets/logos/shanghai-jiao-tong-symbol.png" width="52" height="52" alt="Shanghai Jiao Tong University"></a>
-    </div>
-    <p class="eyebrow">Medical multimodal reasoning</p>
-    <h1 id="paper-title"><span>MedEvo</span>: Medical Reasoning Evolution<br>through Knowledge Navigation</h1>
-    <ul class="authors" aria-label="Authors">
+<section class="hero" aria-labelledby="paper-title">
+  <h1 id="paper-title"><span>MedEvo</span>: Medical Reasoning Evolution <br>through Knowledge Navigation</h1>
+  <ul class="authors" aria-label="Authors">
       <li><a href="https://openreview.net/profile?id=~Wang_Xiaoliang2">Xiaoliang Wang</a><sup>1,2*</sup></li>
       <li><a href="https://openreview.net/profile?id=~Zhuo_Chen3">Zhuo Chen</a><sup>2*</sup></li>
       <li><a href="https://openreview.net/profile?id=~Chuanyang_Zheng2">Chuanyang Zheng</a><sup>2</sup></li>
@@ -56,179 +42,54 @@
       <li><a href="https://openreview.net/profile?id=~Jian_Wang25">Jian Wang</a><sup>2</sup></li>
       <li><a href="https://openreview.net/profile?id=~Lijun_Wu1">Lijun Wu</a><sup>3,4†</sup></li>
     </ul>
-    <ul class="affiliations" aria-label="Author affiliations">
+  <ul class="affiliations" aria-label="Author affiliations">
       <li><sup>1</sup> Zhejiang University</li>
       <li><sup>2</sup> Ant Group</li>
       <li><sup>3</sup> Shanghai Artificial Intelligence Laboratory</li>
       <li><sup>4</sup> Shanghai Jiao Tong University</li>
     </ul>
-    <p class="author-note"><span>* Equal contribution</span><span>† Corresponding author</span></p>
-    <p class="hero-summary">MedEvo turns failed medical reasoning traces into supervision. An answer-blind auditor guides a local repair; independent feedback directs which failures to revisit in the next round.</p>
-    <div class="actions">
-      <a class="button primary" href="assets/medevo.pdf"><span aria-hidden="true">↗</span> Read the paper</a>
-      <a class="button" href="https://github.com/pork-pay/MedEvo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.86c-2.78.6-3.37-1.18-3.37-1.18-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.64-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03a9.55 9.55 0 0 1 5 0c1.91-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg> GitHub</a>
-      <a class="text-link" href="#method">Explore the method <span aria-hidden="true">↓</span></a>
-    </div>
-  </section>
+  <p class="author-note">* Equal contribution <span>·</span> † Corresponding author</p>
+  <p class="thesis">Medical knowledge repairs a failed trace; independent feedback decides what the student learns next.</p>
+  <div class="hero-links"><a class="paper-link" href="assets/medevo.pdf">Paper ↗</a><a href="https://github.com/pork-pay/MedEvo">GitHub ↗</a></div>
+</section>
 
-  <section class="opening" aria-labelledby="question-title">
-    <div class="opening-copy">
-      <p class="eyebrow">The research question</p>
-      <h2 id="question-title">What is worth keeping<br>from a failed answer?</h2>
-      <p>A student may read an image correctly and make several supported inferences before one mistake changes its conclusion. MedEvo asks how to preserve those useful steps, repair the failed operation, and turn the result into supervision the student can learn from.</p>
-      <p class="opening-conclusion">The next decision is just as important: <strong>which failures deserve more training effort?</strong></p>
-    </div>
-    <div class="trace-diagram" role="img" aria-label="Conceptual local repair: preserve the supported prefix, remove the first error and its dependent steps, then let the same student continue from an answer-free hint.">
-      <p class="diagram-label">Within one reasoning trace</p>
-      <div class="trace-row"><span class="trace-dot good">1</span><div><strong>Read the evidence</strong><small>Supported observation</small></div><span class="trace-status">Keep</span></div>
-      <div class="trace-row"><span class="trace-dot good">2</span><div><strong>Connect the findings</strong><small>Supported inference</small></div><span class="trace-status">Keep</span></div>
-      <div class="trace-boundary"><span>Safe rollback boundary</span></div>
-      <div class="trace-row error"><span class="trace-dot">3</span><div><strong>First consequential error</strong><small>Diagnosed against the input evidence</small></div><span class="trace-status">Revisit</span></div>
-      <div class="trace-repair"><span class="repair-arrow" aria-hidden="true">↳</span><div><strong>Minimal hint → student continuation</strong><small>The student regenerates from the boundary.</small></div></div>
-      <p class="diagram-footnote">Conceptual schematic. The retained prefix ends before the diagnosed error.</p>
-    </div>
-  </section>
+<section class="evolution" id="method" aria-labelledby="evolution-title">
+  <div class="animation-heading"><p id="evolution-title">KNOWLEDGE NAVIGATION</p><span>Schematic</span></div>
+  <h2 id="stage-title">Repair a trace. Evolve the dataset.</h2>
+  <div id="animation-canvas" class="animation-canvas">
+    <picture><source media="(max-width:640px)" srcset="assets/knowledge-navigation-mobile.svg"><img src="assets/knowledge-navigation.svg" alt="MedEvo preserves a valid reasoning prefix, repairs the suffix with an answer-free hint, screens the target, retrains from the same base, and uses independent feedback to choose the next questions."></picture>
+  </div>
+  <div class="animation-controls" id="animation-controls" hidden><button id="play-animation" class="play-button" type="button" aria-label="Pause the evolution schematic" aria-pressed="true">Pause</button><div class="stage-buttons" role="group" aria-label="Animation stages"><button type="button" data-step="0" aria-pressed="true">01 <span>Locate</span></button><button type="button" data-step="1" aria-pressed="false">02 <span>Repair</span></button><button type="button" data-step="2" aria-pressed="false">03 <span>Learn</span></button><button type="button" data-step="3" aria-pressed="false">04 <span>Reselect</span></button></div></div>
+  <div class="animation-track" aria-hidden="true"><div id="animation-progress"></div></div>
+  <p class="animation-caption">The dataset evolves. Each SFT round starts from the same base model M₀.</p>
+</section>
 
-  <section id="method" aria-labelledby="method-title">
-    <div class="section-heading">
-      <p class="eyebrow">01 / Method</p>
-      <h2 id="method-title">Knowledge Navigation connects<br>local repair to the next learning round.</h2>
-      <p>Medical tags describe the clinical context. Error types describe the reasoning operation that failed. MedEvo uses them at two different decision points.</p>
-    </div>
-    <div class="method-lanes">
-      <article class="method-lane local-lane">
-        <div class="lane-heading"><span class="lane-number">A</span><div><p class="eyebrow">Within a trajectory</p><h3>Choose where and how to repair.</h3></div></div>
-        <ol>
-          <li><strong>Locate the error.</strong><span>Step uncertainty suggests where to inspect. The auditor checks the evidence and identifies a safe boundary.</span></li>
-          <li><strong>Give targeted guidance.</strong><span>The auditor uses observable medical tags and an error diagnosis to write a minimal hint without the reference answer.</span></li>
-          <li><strong>Continue and screen.</strong><span>The same student preserves the prefix and regenerates the suffix. Correctness, prefix integrity, unsupported additions, and learnability are checked before admission.</span></li>
-        </ol>
-        <p class="lane-output">Output <span aria-hidden="true">→</span> screened student-generated supervision</p>
-      </article>
-      <article class="method-lane feedback-lane">
-        <div class="lane-heading"><span class="lane-number">B</span><div><p class="eyebrow">Across learning rounds</p><h3>Choose what to learn next.</h3></div></div>
-        <ol>
-          <li><strong>Measure remaining weaknesses.</strong><span>A fixed feedback set identifies errors and regressions across medical tags and error types.</span></li>
-          <li><strong>Select questions for fresh rollouts.</strong><span>These gaps prioritize questions in the training pool and the types of failures to repair.</span></li>
-          <li><strong>Update the supervision.</strong><span>Keep at most one active target per question. Train the next student from the original base model on the updated dataset.</span></li>
-        </ol>
-        <p class="lane-output">Output <span aria-hidden="true">→</span> revised data priorities and training targets</p>
-      </article>
-    </div>
-    <div class="protocol-note"><strong>What changes between rounds?</strong><p>The taxonomy and error codebook stay fixed. Data priorities and accepted training targets evolve. Experience passes through the dataset: each round of supervised fine-tuning (SFT) starts again from the same base model.</p></div>
-    <details class="figure-details">
-      <summary>See the complete pipeline from the paper <span aria-hidden="true">+</span></summary>
-      <figure>
-        <a class="figure-link" href="assets/workflow.png" target="_blank" rel="noopener" aria-label="Open the complete MedEvo pipeline at full size"><img src="assets/workflow.png" loading="lazy" alt="MedEvo pipeline: tag the question pool, generate student rollouts, diagnose and repair failures, update screened targets, and use fixed-set feedback to select the next questions."></a>
-        <figcaption><strong>Full pipeline.</strong> The auditor receives only tags observable from the input; answer-derived labels are excluded. Reference answers are used for correctness checks after generation. Feedback questions guide selection and never enter training. <span class="image-hint">Select the figure to enlarge.</span></figcaption>
-      </figure>
-    </details>
-  </section>
-
-  <section id="evidence" aria-labelledby="evidence-title">
-    <div class="section-heading">
-      <p class="eyebrow">02 / What the experiments show</p>
-      <h2 id="evidence-title">Judge a repair by what<br>the student learns from it.</h2>
-      <p>Repair success measures whether a failed response can be corrected. Downstream accuracy measures how useful the resulting supervision is. The experiments expose why both matter.</p>
-    </div>
-    <article class="finding finding-feature">
-      <div class="finding-copy">
-        <p class="finding-number">Finding 01</p>
-        <h3>Harder repairs can produce more useful supervision.</h3>
-        <p>Selecting the 8,000 questions with the longest failed traces yields <strong>lower repair success but higher downstream accuracy</strong> than selecting 8,000 random questions.</p>
-        <p>The two metrics rank these selections in opposite orders. This supports checking learning outcomes when choosing what to repair. It does not isolate trace length from question difficulty.</p>
-      </div>
-      <div class="comparison-panel">
-        <p class="comparison-title">One round · Qwen3.5-9B · 8,000 questions per selection</p>
-        <div class="table-scroll" tabindex="0" role="region" aria-label="Trajectory-selection comparison">
-          <table class="comparison-table">
-            <thead><tr><th scope="col">Selection</th><th scope="col">Repair success</th><th scope="col">Mean accuracy<br><span>after training</span></th></tr></thead>
-            <tbody>
-              <tr><th scope="row">Longest traces</th><td>55.70<span>%</span></td><td class="best">66.78<span>%</span></td></tr>
-              <tr><th scope="row">Random questions</th><td class="best">67.50<span>%</span></td><td>64.35<span>%</span></td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="source-note">Source: paper, “Learning Value of Repair Supervision,” selection experiment. Bold indicates the larger value in each column.</p>
-      </div>
+<section id="evidence" class="evidence-section" aria-labelledby="evidence-title">
+  <div class="section-heading"><p class="eyebrow">What the experiments reveal</p><h2 id="evidence-title">Repair is only the beginning.</h2></div>
+  <div class="insights">
+    <article class="insight"><h3>Harder to repair. <br>More useful to learn.</h3>
+      <table class="selection-comparison"><caption>Qwen3.5-9B · one round</caption><thead><tr><th scope="col"></th><th scope="col">Longest 8k</th><th scope="col">Random 8k</th></tr></thead><tbody><tr><th scope="row">Repair success</th><td>55.70<span>%</span></td><td>67.50<span>%</span></td></tr><tr><th scope="row">After training</th><td class="emphasis">66.78<span>%</span></td><td>64.35<span>%</span></td></tr></tbody></table>
+      <p class="small-note">Mean benchmark accuracy. Length and difficulty are not separated.</p>
     </article>
-
-    <article class="finding">
-      <div class="finding-intro"><div><p class="finding-number">Finding 02</p><h3>Preserve the prefix and diagnose the failed operation.</h3></div><p>Type-guided suffix continuation performs best among the four first-round designs: <strong>71.80% repair success</strong> and <strong>67.22% mean accuracy</strong>. Both the regeneration scope and the specificity of the hint affect the result.</p></div>
-      <figure class="paper-figure">
-        <a class="figure-link" href="assets/repair.png" target="_blank" rel="noopener" aria-label="Open repair-design comparison at full size"><img src="assets/repair.png" loading="lazy" alt="Four repair designs for Qwen3.5-9B. Hint plus full rewrite: 57.80% repair success and 63.20% mean accuracy. No-hint rewrite: 36.70% and 61.16%. Generic hint plus suffix continuation: 64.50% and 64.20%. Type-guided hint plus suffix continuation: 71.80% and 67.22%."></a>
-        <figcaption><strong>Repair-design ablation.</strong> All four settings use Qwen3.5-9B in the first round. The untrained base has 65.57% mean accuracy. The right panel shows that correcting individual responses need not improve the trained model. <span class="image-hint">Select the figure to enlarge.</span></figcaption>
-      </figure>
+    <article class="insight"><h3>Independent feedback <br>changes the direction.</h3>
+      <div class="feedback-comparison"><p>Seven-benchmark mean · Qwen3.5-9B</p><div><span>Training-error feedback</span><strong>65.57 <i>→</i> 64.01<small>%</small></strong></div><div class="independent"><span>Fixed-set feedback</span><strong>65.57 <i>→</i> 69.12<small>%</small></strong></div></div>
+      <p class="small-note">Base → round 3. Better training fit need not transfer.</p>
     </article>
+  </div>
+  <details class="figure-details"><summary>See the evidence in Figure 5 <span aria-hidden="true">+</span></summary><figure><a href="assets/selection.png" target="_blank" rel="noopener"><img src="assets/selection.png" loading="lazy" alt="The paper's selection, hint-count, and independent-feedback comparisons, including longest-8k accuracy of 66.78% and fixed-set feedback accuracy of 69.12%."></a><figcaption>Selection, hints, and feedback. Percentages are reported values; the figure opens at full resolution.</figcaption></figure></details>
+</section>
 
-    <article class="finding last-finding">
-      <div class="finding-intro"><div><p class="finding-number">Finding 03</p><h3>Better fit to training failures can hide worse generalization.</h3></div><p>Training-error feedback raises training accuracy to <strong>78.00%</strong>, while benchmark accuracy falls to <strong>64.01%</strong>. Fixed-set feedback reaches <strong>69.12%</strong> on the benchmarks. The source of feedback changes what the next round learns.</p></div>
-      <figure class="paper-figure">
-        <a class="figure-link" href="assets/selection.png" target="_blank" rel="noopener" aria-label="Open selection, hints, and feedback comparisons at full size"><img src="assets/selection.png" loading="lazy" alt="Selection, hint-count, and feedback ablations. Longest-8k selection yields 66.78% mean accuracy. With 1, 3, 5, and 8 hints, accuracy is 66.78%, 67.01%, 66.74%, and 64.10%. At round 3, training-error versus fixed-set feedback yields 78.00% versus 71.00% training accuracy, but 64.01% versus 69.12% benchmark accuracy."></a>
-        <figcaption><strong>Selection, hints, and feedback.</strong> Panels (c–d) compare training accuracy with the unweighted mean over seven benchmarks; the fixed feedback set contains 5,000 held-out questions. Panel (b) uses the same longest-8k subset as panel (a): three hints exceed one hint by only 0.23 percentage points, and more hints perform worse. All main experiments use one hint. <span class="image-hint">Select the figure to enlarge.</span></figcaption>
-      </figure>
-      <div class="interpretation"><strong>Practical implication</strong><p>Use training failures to find repair candidates, assess remaining capability gaps on independent data, and check the effect of the resulting supervision on downstream learning.</p></div>
-    </article>
-  </section>
+<section id="results" class="results-section" aria-labelledby="results-title">
+  <div class="results-heading"><div><p class="eyebrow">SFT only</p><h2 id="results-title">Across three scales.</h2></div><p>Seven-benchmark mean accuracy (%)</p></div>
+  <div class="scale-results"><div><span>Qwen3.5-9B</span><strong>65.57 <i>→</i> 69.12</strong><small>3 rounds · +3.55 pp</small></div><div><span>Qwen3.5-35B</span><strong>67.91 <i>→</i> 73.04</strong><small>3 rounds · +5.13 pp</small></div><div><span>Qwen3.5-397B</span><strong>71.83 <i>→</i> 74.95</strong><small>2 rounds · +3.12 pp</small></div></div>
+  <p class="small-note">pp: percentage points. Seven medical multimodal benchmarks.</p>
+</section>
 
-  <section id="results" aria-labelledby="results-title">
-    <div class="section-heading">
-      <p class="eyebrow">03 / Results and scope</p>
-      <h2 id="results-title">Gains across three model scales,<br>using supervised fine-tuning.</h2>
-      <p>Accuracy is evaluated on seven medical multimodal benchmarks: PMC-VQA, VQA-RAD, SLAKE, PathVQA, OmniMedVQA, MedXpertQA-MM, and the medical subset of MMMU.</p>
-    </div>
-    <div class="table-scroll results-table" tabindex="0" role="region" aria-label="Accuracy across model scales">
-      <table>
-        <caption>Unweighted seven-benchmark mean accuracy (%)</caption>
-        <thead><tr><th scope="col">Backbone</th><th scope="col">Base</th><th scope="col">MedEvo</th><th scope="col">Change</th><th scope="col">Rounds</th></tr></thead>
-        <tbody>
-          <tr><th scope="row">Qwen3.5-9B</th><td>65.57</td><td class="best">69.12</td><td class="gain">+3.55 pp</td><td>3</td></tr>
-          <tr><th scope="row">Qwen3.5-35B</th><td>67.91</td><td class="best">73.04</td><td class="gain">+5.13 pp</td><td>3</td></tr>
-          <tr><th scope="row">Qwen3.5-397B</th><td>71.83</td><td class="best">74.95</td><td class="gain">+3.12 pp</td><td>2</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="source-note">Source: paper, main results and scaling experiments. “pp” denotes absolute percentage points. Each round retrains from the corresponding base model.</p>
-    <div class="result-notes">
-      <article><h3>Compared with teacher supervision</h3><p>MedEvo-9B reaches <strong>69.12%</strong>, versus <strong>66.93%</strong> for teacher-distillation SFT in the reported comparison. The repair auditor supplies a hint; the student generates the training response.</p></article>
-      <article><h3>On expert-level medical questions</h3><p>Qwen3.5-9B improves from <strong>47.40% to 54.50%</strong> on MedXpertQA-MM, a gain of <strong>7.10 percentage points</strong>.</p></article>
-    </div>
-    <details class="data-details">
-      <summary>View the 9B benchmark breakdown <span aria-hidden="true">+</span></summary>
-      <div class="table-scroll" tabindex="0" role="region" aria-label="Qwen3.5-9B benchmark accuracy">
-        <table>
-          <caption>Qwen3.5-9B accuracy (%) · MedEvo after round 3</caption>
-          <thead><tr><th scope="col">Benchmark</th><th scope="col">Base</th><th scope="col">Teacher SFT</th><th scope="col">MedEvo</th></tr></thead>
-          <tbody>
-            <tr><th scope="row">PMC-VQA</th><td>59.20</td><td>61.23</td><td>62.68</td></tr>
-            <tr><th scope="row">VQA-RAD</th><td>68.10</td><td>70.15</td><td>70.40</td></tr>
-            <tr><th scope="row">SLAKE</th><td>76.80</td><td>71.60</td><td>78.23</td></tr>
-            <tr><th scope="row">PathVQA</th><td>48.80</td><td>53.20</td><td>53.34</td></tr>
-            <tr><th scope="row">OmniMedVQA</th><td>82.20</td><td>81.90</td><td>85.41</td></tr>
-            <tr><th scope="row">MedXpertQA-MM</th><td>47.40</td><td>52.30</td><td>54.50</td></tr>
-            <tr><th scope="row">MMMU-Med</th><td>76.50</td><td>78.14</td><td>79.28</td></tr>
-            <tr class="total-row"><th scope="row">Unweighted mean</th><td>65.57</td><td>66.93</td><td>69.12</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </details>
-    <div class="scope-note"><h3>Where these findings apply</h3><p>The study covers medical image question answering in multiple-choice and short-answer formats. The current system uses a fixed taxonomy and error codebook, and relies on a strong proprietary auditor. The trajectory-selection study does not separate length from difficulty. Clinical use and transfer to other settings require further evaluation.</p></div>
-  </section>
-
-  <section id="resources" aria-labelledby="resources-title">
-    <div class="section-heading">
-      <p class="eyebrow">04 / Resources</p>
-      <h2 id="resources-title">Read, explore, and cite.</h2>
-      <p>The paper describes the method, prompts, training configurations, and evaluation procedures. This repository hosts the paper and project page; implementation and training-data files are not released.</p>
-    </div>
-    <div class="resource-grid">
-      <a class="resource-link" href="assets/medevo.pdf"><span>Paper</span><strong>Read the technical report</strong><span aria-hidden="true">↗</span></a>
-      <a class="resource-link" href="https://github.com/pork-pay/MedEvo"><span>GitHub</span><strong>Browse project resources</strong><span aria-hidden="true">↗</span></a>
-      <a class="resource-link" href="https://pork-pay.github.io/MedEvo/"><span>Project page</span><strong>MedEvo research overview</strong><span aria-hidden="true">↗</span></a>
-    </div>
-    <div class="related-project"><p class="eyebrow">Related project</p><h3><a href="https://pork-pay.github.io/ECG-RSI/">ECG-RSI <span aria-hidden="true">↗</span></a></h3><p>MedEvo studies how to preserve and repair medical reasoning trajectories. ECG-RSI studies measurable ECG waveform supervision and feedback-guided intervention selection.</p></div>
-    <div class="citation-heading"><h3 id="cite">Citation</h3><button id="copy-citation" type="button">Copy BibTeX</button><span id="copy-status" role="status" aria-live="polite"></span></div>
-    <pre class="citation"><code id="bibtex">@misc{wang2026medevo,
+<section id="resources" class="resources-section" aria-label="Resources">
+  <div class="resource-links"><a href="assets/medevo.pdf">Paper ↗</a><a href="https://github.com/pork-pay/MedEvo">GitHub ↗</a><a href="https://pork-pay.github.io/MedEvo/">Project page ↗</a><a href="https://pork-pay.github.io/ECG-RSI/">Related: ECG-RSI ↗</a></div>
+  <p class="small-note">The paper and project page are available. Implementation and training-data files are not released.</p>
+  <details class="figure-details"><summary>Full method diagram <span aria-hidden="true">+</span></summary><figure><a href="assets/workflow.png" target="_blank" rel="noopener"><img src="assets/workflow.png" loading="lazy" alt="Full MedEvo method diagram from the paper."></a><figcaption>Only input-observable tags reach the auditor. Feedback questions guide selection and never enter training.</figcaption></figure></details>
+  <details class="citation-details" id="cite"><summary>Cite MedEvo <span aria-hidden="true">+</span></summary><div class="citation-heading"><button id="copy-citation" type="button">Copy BibTeX</button><span id="copy-status" role="status" aria-live="polite"></span></div><pre class="citation"><code id="bibtex">@misc{wang2026medevo,
   title  = {MedEvo: Medical Reasoning Evolution through Knowledge Navigation},
   author = {Wang, Xiaoliang and Chen, Zhuo and Zheng, Chuanyang and
             Wang, Quanbin and Lao, Jiangwei and Liu, Yingao and Liu, Jiajia and
@@ -236,9 +97,9 @@
             Wang, Jian and Wu, Lijun},
   year   = {2026},
   url    = {https://pork-pay.github.io/MedEvo/}
-}</code></pre>
-  </section>
+}</code></pre></details>
+</section>
 </main>
-<footer><a class="brand" href="#top"><img src="assets/logos/medevo.svg" width="28" height="25" alt="">MedEvo</a><p>Medical Reasoning Evolution through Knowledge Navigation</p><a href="#top">Back to top ↑</a></footer>
+<footer><span>MedEvo · 2026</span><a href="#top">Back to top ↑</a></footer>
 </body>
 </html>
