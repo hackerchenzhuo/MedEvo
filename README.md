@@ -1,9 +1,4 @@
-<div align="center">
-
-<a href="https://www.zju.edu.cn/"><img src="docs/assets/logos/zhejiang-university-symbol.png" height="45" alt="Zhejiang University"></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://www.antgroup.com/"><img src="docs/assets/logos/ant-group-symbol.png" height="45" alt="Ant Group"></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://www.shlab.org.cn/"><img src="docs/assets/logos/shanghai-ai-lab-symbol.png" height="36" alt="Shanghai Artificial Intelligence Laboratory"></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://www.sjtu.edu.cn/"><img src="docs/assets/logos/shanghai-jiao-tong-symbol.png" height="45" alt="Shanghai Jiao Tong University"></a>
+<a href="https://www.antgroup.com/"><img src="docs/assets/logos/ant-group-symbol.png" height="32" alt="Ant Group"></a>
 
 # MedEvo: Medical Reasoning Evolution<br>through Knowledge Navigation
 
@@ -28,71 +23,42 @@
 
 <sup>*</sup>Equal contribution · <sup>†</sup>Corresponding author
 
-</div>
+## Watch Knowledge Navigation
 
-## What can a student learn from a failed answer?
+[![Knowledge Navigation: preserve a supported prefix, repair the suffix, update the dataset, and let independent feedback redirect the next questions.](docs/assets/knowledge-navigation.gif)](https://pork-pay.github.io/MedEvo/#method)
 
-A medical reasoning trace can contain useful observations and inferences before one error changes the conclusion. **MedEvo preserves the supported prefix, repairs the failed operation, and uses independent feedback to decide which failures to revisit.**
+**Medical knowledge repairs a failed trace; independent feedback decides what the student learns next.**
 
-Knowledge Navigation operates at two levels:
+A gold-blind auditor supplies an answer-free hint. The same student preserves its supported prefix and regenerates the suffix. Screened targets update the dataset; each SFT round starts from the **same base model**. Held-out feedback guides the next training questions.
 
-1. **Within a trajectory:** an auditor without access to the reference answer diagnoses the first consequential error and supplies a minimal, answer-free hint. The same student keeps its valid prefix and regenerates the suffix. Correctness, prefix integrity, unsupported additions, and learnability are checked before a repair becomes a training target.
-2. **Across rounds:** a fixed feedback set identifies remaining weaknesses and regressions by medical tags and error types. These guide fresh rollouts from the training pool, repair priorities, and updates to the supervision dataset.
+[**Play the animated explanation →**](https://pork-pay.github.io/MedEvo/#method)
 
-Each round of supervised fine-tuning (SFT) starts from the original base model. The taxonomy and error codebook remain fixed; experience is carried through the evolving dataset. Feedback questions never enter training.
+## Two observations
 
-[![Knowledge Navigation in MedEvo](docs/assets/workflow.png)](https://pork-pay.github.io/MedEvo/#method)
+- **Repair success is not learning value.** Longest-8k questions have lower repair success than random-8k questions (55.70% versus 67.50%), but yield higher downstream accuracy (66.78% versus 64.35%). This comparison does not separate trace length from difficulty.
+- **The feedback source matters.** Training-error feedback ends at 64.01% benchmark accuracy; independent fixed-set feedback reaches 69.12%. Both start from 65.57% on Qwen3.5-9B.
 
-*The auditor receives only tags observable from the input; answer-derived labels are excluded. The project page explains the two decision loops before showing the complete pipeline.*
-
-## Key observations
-
-**Repair success and learning value are different objectives.** In a one-round Qwen3.5-9B comparison, the 8,000 questions with the longest failed traces have lower repair success than 8,000 randomly selected questions, but produce higher downstream accuracy:
-
-| Selection | Repair success (%) | Mean accuracy after training (%) |
-|:--|--:|--:|
-| Longest traces | 55.70 | **66.78** |
-| Random questions | **67.50** | 64.35 |
-
-This comparison supports assessing the learning value of repairs. It does not isolate trajectory length from question difficulty.
-
-**Preserving reasoning and diagnosing the error both matter.** Type-guided suffix continuation reaches 71.80% repair success and 67.22% mean accuracy in the first-round ablation. Hint-guided full rewriting reaches 57.80% and 63.20%, respectively.
-
-**Training fit is insufficient feedback.** Training-error feedback reaches 78.00% training accuracy but 64.01% benchmark accuracy. Fixed-set feedback reaches 69.12% on the benchmarks. Independent assessment changes where subsequent repair effort is spent.
-
-[![Selection, hints, and feedback ablations](docs/assets/selection.png)](docs/assets/selection.png)
-
-*Source: the paper's repair-design and learning-value experiments. All main experiments use one hint. In the longest-8k hint-count study, three hints yield 67.01% versus 66.78% for one hint; additional hints perform worse.*
+[Evidence and original figure →](https://pork-pay.github.io/MedEvo/#evidence)
 
 ## Results
 
-Unweighted mean accuracy across **seven medical multimodal benchmarks**, using SFT:
+Unweighted mean accuracy across seven medical multimodal benchmarks, using SFT alone:
 
-| Backbone | Base (%) | MedEvo (%) | Absolute change | Rounds |
-|:--|--:|--:|--:|--:|
-| Qwen3.5-9B | 65.57 | **69.12** | +3.55 pp | 3 |
-| Qwen3.5-35B | 67.91 | **73.04** | +5.13 pp | 3 |
-| Qwen3.5-397B | 71.83 | **74.95** | +3.12 pp | 2 |
+| Backbone | Base (%) | MedEvo (%) | Rounds |
+|:--|--:|--:|--:|
+| Qwen3.5-9B | 65.57 | **69.12** | 3 |
+| Qwen3.5-35B | 67.91 | **73.04** | 3 |
+| Qwen3.5-397B | 71.83 | **74.95** | 2 |
 
-The benchmarks are PMC-VQA, VQA-RAD, SLAKE, PathVQA, OmniMedVQA, MedXpertQA-MM, and the medical subset of MMMU. “pp” denotes percentage points. The paper and [project page](https://pork-pay.github.io/MedEvo/#results) provide benchmark-level results and ablations.
-
-The current study covers multiple-choice and short-answer medical image questions, uses a fixed knowledge structure, and relies on a strong proprietary auditor. Clinical use and transfer to other settings require further evaluation.
+Full settings, benchmark-level results, and ablations are in the [paper](https://pork-pay.github.io/MedEvo/assets/medevo.pdf).
 
 ## Resources
 
-- [Paper](https://pork-pay.github.io/MedEvo/assets/medevo.pdf): method, prompts, training configurations, experiments, and evaluation procedures.
-- [Project page](https://pork-pay.github.io/MedEvo/): an illustrated explanation of the method and selected evidence.
-- [Related project: ECG-RSI](https://pork-pay.github.io/ECG-RSI/): measurable ECG waveform supervision and feedback-guided intervention selection.
+This repository hosts the paper and project page. **Implementation and training-data files are not released.**
 
-**This repository hosts the paper and project page. Implementation and training-data files are not released.** Underlying public datasets remain subject to their own licenses and access restrictions.
+[Related project: ECG-RSI](https://pork-pay.github.io/ECG-RSI/) studies measurable ECG waveform supervision and feedback-guided intervention selection.
 
-The static project page lives in `docs/` and needs no build step. To preview it locally:
-
-```sh
-python3 -m http.server 8000 --directory docs
-```
-
-Then open <http://localhost:8000/>.
+To preview the static page locally, run `python3 -m http.server 8000 --directory docs` and open <http://localhost:8000/>.
 
 ## Citation
 
