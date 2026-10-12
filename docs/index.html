@@ -20,13 +20,12 @@
 <body id="top">
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header"><nav aria-label="Main navigation">
-  <a class="institution-brand" href="https://www.antgroup.com/" aria-label="Ant Group"><img src="assets/logos/ant-group-symbol.png" width="27" height="32" alt="Ant Group"><span>ANT<br>GROUP</span></a>
-  <a class="nav-project" href="#top">MedEvo</a>
-  <div class="nav-links"><a href="#method">Evolution</a><a href="#evidence">Evidence</a><a href="#resources">Resources</a></div>
+  <a class="site-brand" href="#top"><img src="assets/logos/medevo.svg" width="43" height="39" alt=""><span>MedEvo</span></a>
+  <div class="nav-links"><a href="#method">Evolution</a><a href="#evidence">Evidence</a><a href="#comparison">Results</a><a href="#resources">Resources</a></div>
 </nav></header>
 <main id="main">
 <section class="hero" aria-labelledby="paper-title">
-  <h1 id="paper-title"><span>MedEvo</span>: Medical Reasoning Evolution <br>through Knowledge Navigation</h1>
+  <h1 id="paper-title"><img class="hero-mark" src="assets/logos/medevo.svg" width="52" height="47" alt=""><span>MedEvo</span>: Medical Reasoning Evolution <br>through Knowledge Navigation</h1>
   <ul class="authors" aria-label="Authors">
       <li><a href="https://openreview.net/profile?id=~Wang_Xiaoliang2">Xiaoliang Wang</a><sup>1,2*</sup></li>
       <li><a href="https://openreview.net/profile?id=~Zhuo_Chen3">Zhuo Chen</a><sup>2*</sup></li>
@@ -43,11 +42,11 @@
       <li><a href="https://openreview.net/profile?id=~Lijun_Wu1">Lijun Wu</a><sup>3,4†</sup></li>
     </ul>
   <ul class="affiliations" aria-label="Author affiliations">
-      <li><sup>1</sup> Zhejiang University</li>
-      <li><sup>2</sup> Ant Group</li>
-      <li><sup>3</sup> Shanghai Artificial Intelligence Laboratory</li>
-      <li><sup>4</sup> Shanghai Jiao Tong University</li>
-    </ul>
+    <li><a href="https://www.zju.edu.cn/"><img src="assets/logos/zhejiang-university-symbol.png" width="32" height="32" alt=""><span><sup>1</sup> Zhejiang University</span></a></li>
+    <li><a href="https://www.antgroup.com/"><img src="assets/logos/ant-group-symbol.png" width="32" height="32" alt=""><span><sup>2</sup> Ant Group</span></a></li>
+    <li><a href="https://www.shlab.org.cn/"><img src="assets/logos/shanghai-ai-lab-symbol.png" width="32" height="32" alt=""><span><sup>3</sup> Shanghai Artificial Intelligence Laboratory</span></a></li>
+    <li><a href="https://www.sjtu.edu.cn/"><img src="assets/logos/shanghai-jiao-tong-symbol.png" width="32" height="32" alt=""><span><sup>4</sup> Shanghai Jiao Tong University</span></a></li>
+  </ul>
   <p class="author-note">* Equal contribution <span>·</span> † Corresponding author</p>
   <p class="thesis">Medical knowledge repairs a failed trace; independent feedback decides what the student learns next.</p>
   <div class="hero-links"><a class="paper-link" href="assets/medevo.pdf">Paper ↗</a><a href="https://github.com/pork-pay/MedEvo">GitHub ↗</a></div>
@@ -77,6 +76,247 @@
     </article>
   </div>
   <details class="figure-details"><summary>See the evidence in Figure 5 <span aria-hidden="true">+</span></summary><figure><a href="assets/selection.png" target="_blank" rel="noopener"><img src="assets/selection.png" loading="lazy" alt="The paper's selection, hint-count, and independent-feedback comparisons, including longest-8k accuracy of 66.78% and fixed-set feedback accuracy of 69.12%."></a><figcaption>Selection, hints, and feedback. Percentages are reported values; the figure opens at full resolution.</figcaption></figure></details>
+</section>
+
+<section id="comparison" class="comparison-section" aria-labelledby="comparison-title">
+  <svg class="symbol-definitions" aria-hidden="true" width="0" height="0"><defs>
+  <symbol id="medical-model-mark" viewBox="0 0 20 20"><path d="M6.5 5V3.5h7V5M3 5.5h14v11H3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M10 8v6M7 11h6" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="repair-method-mark" viewBox="0 0 20 20"><path d="M12.2 3.2a4.3 4.3 0 0 0-5.1 5.5l-4.5 5a1.9 1.9 0 0 0 2.7 2.7l5-4.5a4.3 4.3 0 0 0 5.5-5.1l-2.6 2.1-2.1-2.1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+</defs></svg>
+  <div class="results-heading"><div><p class="eyebrow">Medical multimodal benchmarks</p><h2 id="comparison-title">The complete model comparison.</h2></div><a class="table-source" href="assets/medevo.pdf#page=9">Table 2 in the paper ↗</a></div>
+  <div class="table-key"><span><svg class="model-marker medical" role="img" aria-label="Medical model" viewBox="0 0 20 20"><use href="#medical-model-mark"></use></svg> Medical model</span><span><svg class="model-marker repair" role="img" aria-label="Trajectory-repair method" viewBox="0 0 20 20"><use href="#repair-method-mark"></use></svg> Trajectory repair</span><span class="table-scroll-hint">Scroll horizontally for all benchmarks →</span></div>
+  <div class="comparison-scroll" tabindex="0" role="region" aria-label="Complete model comparison, scroll horizontally for all eight accuracy columns">
+  <table class="main-comparison" aria-describedby="comparison-notes">
+    <caption>Accuracy (%) · MedEvo after round 3</caption>
+    <colgroup><col class="model-column"><col span="8"></colgroup>
+    <thead><tr><th scope="col" id="comparison-model">Model</th>
+<th scope="col" id="bench-pmc_vqa"><abbr title="PMC-VQA">PMC-<br>VQA</abbr></th>
+<th scope="col" id="bench-vqa_rad"><abbr title="VQA-RAD">VQA-<br>RAD</abbr></th>
+<th scope="col" id="bench-slake"><abbr title="SLAKE">SLAKE</abbr></th>
+<th scope="col" id="bench-pathvqa"><abbr title="PathVQA">PathVQA</abbr></th>
+<th scope="col" id="bench-omnimedvqa"><abbr title="OmniMedVQA">OmniMed<br>VQA</abbr></th>
+<th scope="col" id="bench-medxqa"><abbr title="MedXpertQA-MM">MedXQA</abbr></th>
+<th scope="col" id="bench-mmmu_med"><abbr title="Medical subset of MMMU">MMMU-<br>Med</abbr></th>
+<th scope="col" id="bench-avg"><abbr title="Reported unweighted seven-benchmark mean">Avg.</abbr></th>
+</tr></thead>
+<tbody data-group="proprietary"><tr class="group-row"><th colspan="9" scope="rowgroup">Proprietary models</th></tr>
+<tr class="" data-source-row="row_01"><th scope="row" id="comparison-row_01"><span class="model-cell"><span class="model-markers"><span class="marker-space"></span><span class="marker-space"></span></span><span>GPT-5.6-sol</span></span></th>
+<td data-column="pmc_vqa" headers="comparison-row_01 bench-pmc_vqa"><span class="runner-up-value">60.43</span></td>
+<td data-column="vqa_rad" headers="comparison-row_01 bench-vqa_rad"><span class="runner-up-value">70.29</span></td>
+<td data-column="slake" headers="comparison-row_01 bench-slake"><span class="best-value">81.34</span></td>
+<td data-column="pathvqa" headers="comparison-row_01 bench-pathvqa"><span class="runner-up-value">54.84</span></td>
+<td data-column="omnimedvqa" headers="comparison-row_01 bench-omnimedvqa"><span class="runner-up-value">76.67</span></td>
+<td data-column="medxqa" headers="comparison-row_01 bench-medxqa"><span class="runner-up-value">77.50</span></td>
+<td data-column="mmmu_med" headers="comparison-row_01 bench-mmmu_med"><span class="runner-up-value">86.24</span></td>
+<td data-column="avg" headers="comparison-row_01 bench-avg"><span class="runner-up-value">72.47</span></td>
+</tr>
+<tr class="" data-source-row="row_02"><th scope="row" id="comparison-row_02"><span class="model-cell"><span class="model-markers"><span class="marker-space"></span><span class="marker-space"></span></span><span>Gemini-3.8-Flash</span></span></th>
+<td data-column="pmc_vqa" headers="comparison-row_02 bench-pmc_vqa"><span class="best-value">64.52</span></td>
+<td data-column="vqa_rad" headers="comparison-row_02 bench-vqa_rad"><span class="best-value">74.72</span></td>
+<td data-column="slake" headers="comparison-row_02 bench-slake"><span class="best-value">81.34</span></td>
+<td data-column="pathvqa" headers="comparison-row_02 bench-pathvqa"><span class="best-value">58.58</span></td>
+<td data-column="omnimedvqa" headers="comparison-row_02 bench-omnimedvqa"><span class="best-value">80.76</span></td>
+<td data-column="medxqa" headers="comparison-row_02 bench-medxqa"><span class="best-value">86.30</span></td>
+<td data-column="mmmu_med" headers="comparison-row_02 bench-mmmu_med"><span class="best-value">89.10</span></td>
+<td data-column="avg" headers="comparison-row_02 bench-avg"><span class="best-value">76.47</span></td>
+</tr>
+</tbody>
+<tbody data-group="open_under_10b"><tr class="group-row"><th colspan="9" scope="rowgroup">Open-source models (&lt;10B)</th></tr>
+<tr class="" data-source-row="row_03"><th scope="row" id="comparison-row_03"><span class="model-cell"><span class="model-markers"><svg class="model-marker medical" role="img" aria-label="Medical model" viewBox="0 0 20 20"><use href="#medical-model-mark"></use></svg><span class="marker-space"></span></span><span>LLaVA-Med-7B</span></span></th>
+<td data-column="pmc_vqa" headers="comparison-row_03 bench-pmc_vqa"><span class="">30.50</span></td>
+<td data-column="vqa_rad" headers="comparison-row_03 bench-vqa_rad"><span class="">53.70</span></td>
+<td data-column="slake" headers="comparison-row_03 bench-slake"><span class="">48.00</span></td>
+<td data-column="pathvqa" headers="comparison-row_03 bench-pathvqa"><span class="">38.80</span></td>
+<td data-column="omnimedvqa" headers="comparison-row_03 bench-omnimedvqa"><span class="">44.30</span></td>
+<td data-column="medxqa" headers="comparison-row_03 bench-medxqa"><span class="">20.30</span></td>
+<td data-column="mmmu_med" headers="comparison-row_03 bench-mmmu_med"><span class="">29.30</span></td>
+<td data-column="avg" headers="comparison-row_03 bench-avg"><span class="">37.84</span></td>
+</tr>
+<tr class="" data-source-row="row_04"><th scope="row" id="comparison-row_04"><span class="model-cell"><span class="model-markers"><svg class="model-marker medical" role="img" aria-label="Medical model" viewBox="0 0 20 20"><use href="#medical-model-mark"></use></svg><span class="marker-space"></span></span><span>HuatuoGPT-V-7B</span></span></th>
+<td data-column="pmc_vqa" headers="comparison-row_04 bench-pmc_vqa"><span class="">53.30</span></td>
+<td data-column="vqa_rad" headers="comparison-row_04 bench-vqa_rad"><span class="">67.00</span></td>
+<td data-column="slake" headers="comparison-row_04 bench-slake"><span class="">67.80</span></td>
+<td data-column="pathvqa" headers="comparison-row_04 bench-pathvqa"><span class="">48.00</span></td>
+<td data-column="omnimedvqa" headers="comparison-row_04 bench-omnimedvqa"><span class="">74.20</span></td>
+<td data-column="medxqa" headers="comparison-row_04 bench-medxqa"><span class="">21.60</span></td>
+<td data-column="mmmu_med" headers="comparison-row_04 bench-mmmu_med"><span class="">47.30</span></td>
+<td data-column="avg" headers="comparison-row_04 bench-avg"><span class="">54.17</span></td>
+</tr>
+<tr class="" data-source-row="row_05"><th scope="row" id="comparison-row_05"><span class="model-cell"><span class="model-markers"><svg class="model-marker medical" role="img" aria-label="Medical model" viewBox="0 0 20 20"><use href="#medical-model-mark"></use></svg><span class="marker-space"></span></span><span>BiMediX2-8B</span></span></th>
+<td data-column="pmc_vqa" headers="comparison-row_05 bench-pmc_vqa"><span class="">43.50</span></td>
+<td data-column="vqa_rad" headers="comparison-row_05 bench-vqa_rad"><span class="">49.20</span></td>
+<td data-column="slake" headers="comparison-row_05 bench-slake"><span class="">57.70</span></td>
+<td data-column="pathvqa" headers="comparison-row_05 bench-pathvqa"><span class="">37.00</span></td>
+<td data-column="omnimedvqa" headers="comparison-row_05 bench-omnimedvqa"><span class="">63.30</span></td>
+<td data-column="medxqa" headers="comparison-row_05 bench-medxqa"><span class="">21.80</span></td>
+<td data-column="mmmu_med" headers="comparison-row_05 bench-mmmu_med"><span class="">39.80</span></td>
+<td data-column="avg" headers="comparison-row_05 bench-avg"><span class="">44.61</span></td>
+</tr>
+<tr class="" data-source-row="row_06"><th scope="row" id="comparison-row_06"><span class="model-cell"><span class="model-markers"><span class="marker-space"></span><span class="marker-space"></span></span><span>InternVL2.5-8B</span></span></th>
+<td data-column="pmc_vqa" headers="comparison-row_06 bench-pmc_vqa"><span class="">51.30</span></td>
+<td data-column="vqa_rad" headers="comparison-row_06 bench-vqa_rad"><span class="">59.40</span></td>
+<td data-column="slake" headers="comparison-row_06 bench-slake"><span class="">69.00</span></td>
+<td data-column="pathvqa" headers="comparison-row_06 bench-pathvqa"><span class="">42.10</span></td>
+<td data-column="omnimedvqa" headers="comparison-row_06 bench-omnimedvqa"><span class="">81.30</span></td>
+<td data-column="medxqa" headers="comparison-row_06 bench-medxqa"><span class="">21.70</span></td>
+<td data-column="mmmu_med" headers="comparison-row_06 bench-mmmu_med"><span class="">53.50</span></td>
+<td data-column="avg" headers="comparison-row_06 bench-avg"><span class="">54.04</span></td>
+</tr>
+<tr class="" data-source-row="row_07"><th scope="row" id="comparison-row_07"><span class="model-cell"><span class="model-markers"><span class="marker-space"></span><span class="marker-space"></span></span><span>InternVL3-8B</span></span></th>
+<td data-column="pmc_vqa" headers="comparison-row_07 bench-pmc_vqa"><span class="">53.80</span></td>
+<td data-column="vqa_rad" headers="comparison-row_07 bench-vqa_rad"><span class="">65.40</span></td>
+<td data-column="slake" headers="comparison-row_07 bench-slake"><span class="">72.80</span></td>
+<td data-column="pathvqa" headers="comparison-row_07 bench-pathvqa"><span class="">48.60</span></td>
+<td data-column="omnimedvqa" headers="comparison-row_07 bench-omnimedvqa"><span class="">79.10</span></td>
+<td data-column="medxqa" headers="comparison-row_07 bench-medxqa"><span class="">22.40</span></td>
+<td data-column="mmmu_med" headers="comparison-row_07 bench-mmmu_med"><span class="">59.20</span></td>
+<td data-column="avg" headers="comparison-row_07 bench-avg"><span class="">57.33</span></td>
+</tr>
+<tr class="" data-source-row="row_08"><th scope="row" id="comparison-row_08"><span class="model-cell"><span class="model-markers"><svg class="model-marker medical" role="img" aria-label="Medical model" viewBox="0 0 20 20"><use href="#medical-model-mark"></use></svg><span class="marker-space"></span></span><span>LINGSHU-7B</span></span></th>
+<td data-column="pmc_vqa" headers="comparison-row_08 bench-pmc_vqa"><span class="">56.30</span></td>
+<td data-column="vqa_rad" headers="comparison-row_08 bench-vqa_rad"><span class="">67.90</span></td>
+<td data-column="slake" headers="comparison-row_08 bench-slake"><span class="best-value">83.10</span></td>
+<td data-column="pathvqa" headers="comparison-row_08 bench-pathvqa"><span class="best-value">61.90</span></td>
+<td data-column="omnimedvqa" headers="comparison-row_08 bench-omnimedvqa"><span class="">82.90</span></td>
+<td data-column="medxqa" headers="comparison-row_08 bench-medxqa"><span class="">26.70</span></td>
+<td data-column="mmmu_med" headers="comparison-row_08 bench-mmmu_med"><span class="">54.00</span></td>
+<td data-column="avg" headers="comparison-row_08 bench-avg"><span class="">61.83</span></td>
+</tr>
+<tr class="" data-source-row="row_09"><th scope="row" id="comparison-row_09"><span class="model-cell"><span class="model-markers"><span class="marker-space"></span><span class="marker-space"></span></span><span>Qwen3.5-9B (Base)</span></span></th>
+<td data-column="pmc_vqa" headers="comparison-row_09 bench-pmc_vqa"><span class="">59.20</span></td>
+<td data-column="vqa_rad" headers="comparison-row_09 bench-vqa_rad"><span class="">68.10</span></td>
+<td data-column="slake" headers="comparison-row_09 bench-slake"><span class="">76.80</span></td>
+<td data-column="pathvqa" headers="comparison-row_09 bench-pathvqa"><span class="">48.80</span></td>
+<td data-column="omnimedvqa" headers="comparison-row_09 bench-omnimedvqa"><span class="">82.20</span></td>
+<td data-column="medxqa" headers="comparison-row_09 bench-medxqa"><span class="">47.40</span></td>
+<td data-column="mmmu_med" headers="comparison-row_09 bench-mmmu_med"><span class="">76.50</span></td>
+<td data-column="avg" headers="comparison-row_09 bench-avg"><span class="">65.57</span></td>
+</tr>
+<tr class="baseline-row" data-source-row="row_10"><th scope="row" id="comparison-row_10"><span class="model-cell"><span class="model-markers"><span class="marker-space"></span><svg class="model-marker repair" role="img" aria-label="Trajectory-repair method" viewBox="0 0 20 20"><use href="#repair-method-mark"></use></svg></span><span>Baseline 1 (HHD)</span></span></th>
+<td data-column="pmc_vqa" headers="comparison-row_10 bench-pmc_vqa"><span class="">58.93</span></td>
+<td data-column="vqa_rad" headers="comparison-row_10 bench-vqa_rad"><span class="">67.65</span></td>
+<td data-column="slake" headers="comparison-row_10 bench-slake"><span class="">71.45</span></td>
+<td data-column="pathvqa" headers="comparison-row_10 bench-pathvqa"><span class="">50.12</span></td>
+<td data-column="omnimedvqa" headers="comparison-row_10 bench-omnimedvqa"><span class="">82.35</span></td>
+<td data-column="medxqa" headers="comparison-row_10 bench-medxqa"><span class="">48.75</span></td>
+<td data-column="mmmu_med" headers="comparison-row_10 bench-mmmu_med"><span class="">76.90</span></td>
+<td data-column="avg" headers="comparison-row_10 bench-avg"><span class="">65.16</span></td>
+</tr>
+<tr class="baseline-row" data-source-row="row_11"><th scope="row" id="comparison-row_11"><span class="model-cell"><span class="model-markers"><span class="marker-space"></span><svg class="model-marker repair" role="img" aria-label="Trajectory-repair method" viewBox="0 0 20 20"><use href="#repair-method-mark"></use></svg></span><span>Baseline 2 (TrajFusion)</span></span></th>
+<td data-column="pmc_vqa" headers="comparison-row_11 bench-pmc_vqa"><span class="">59.32</span></td>
+<td data-column="vqa_rad" headers="comparison-row_11 bench-vqa_rad"><span class="">69.12</span></td>
+<td data-column="slake" headers="comparison-row_11 bench-slake"><span class="">77.23</span></td>
+<td data-column="pathvqa" headers="comparison-row_11 bench-pathvqa"><span class="">49.23</span></td>
+<td data-column="omnimedvqa" headers="comparison-row_11 bench-omnimedvqa"><span class="runner-up-value">83.46</span></td>
+<td data-column="medxqa" headers="comparison-row_11 bench-medxqa"><span class="">49.56</span></td>
+<td data-column="mmmu_med" headers="comparison-row_11 bench-mmmu_med"><span class="">77.20</span></td>
+<td data-column="avg" headers="comparison-row_11 bench-avg"><span class="">66.45</span></td>
+</tr>
+<tr class="baseline-row" data-source-row="row_12"><th scope="row" id="comparison-row_12"><span class="model-cell"><span class="model-markers"><span class="marker-space"></span><span class="marker-space"></span></span><span>Baseline 3 (Teacher SFT)</span></span></th>
+<td data-column="pmc_vqa" headers="comparison-row_12 bench-pmc_vqa"><span class="runner-up-value">61.23</span></td>
+<td data-column="vqa_rad" headers="comparison-row_12 bench-vqa_rad"><span class="runner-up-value">70.15</span></td>
+<td data-column="slake" headers="comparison-row_12 bench-slake"><span class="">71.60</span></td>
+<td data-column="pathvqa" headers="comparison-row_12 bench-pathvqa"><span class="">53.20</span></td>
+<td data-column="omnimedvqa" headers="comparison-row_12 bench-omnimedvqa"><span class="">81.90</span></td>
+<td data-column="medxqa" headers="comparison-row_12 bench-medxqa"><span class="runner-up-value">52.30</span></td>
+<td data-column="mmmu_med" headers="comparison-row_12 bench-mmmu_med"><span class="runner-up-value">78.14</span></td>
+<td data-column="avg" headers="comparison-row_12 bench-avg"><span class="runner-up-value">66.93</span></td>
+</tr>
+<tr class="medevo-row" data-source-row="row_13"><th scope="row" id="comparison-row_13"><span class="model-cell"><span class="model-markers"><svg class="model-marker medical" role="img" aria-label="Medical model" viewBox="0 0 20 20"><use href="#medical-model-mark"></use></svg><svg class="model-marker repair" role="img" aria-label="Trajectory-repair method" viewBox="0 0 20 20"><use href="#repair-method-mark"></use></svg></span><span><strong>MedEvo (9B)</strong></span></span></th>
+<td data-column="pmc_vqa" headers="comparison-row_13 bench-pmc_vqa"><span class="best-value">62.68</span></td>
+<td data-column="vqa_rad" headers="comparison-row_13 bench-vqa_rad"><span class="best-value">70.40</span></td>
+<td data-column="slake" headers="comparison-row_13 bench-slake"><span class="runner-up-value">78.23</span></td>
+<td data-column="pathvqa" headers="comparison-row_13 bench-pathvqa"><span class="runner-up-value">53.34</span></td>
+<td data-column="omnimedvqa" headers="comparison-row_13 bench-omnimedvqa"><span class="best-value">85.41</span></td>
+<td data-column="medxqa" headers="comparison-row_13 bench-medxqa"><span class="best-value">54.50</span></td>
+<td data-column="mmmu_med" headers="comparison-row_13 bench-mmmu_med"><span class="best-value">79.28</span></td>
+<td data-column="avg" headers="comparison-row_13 bench-avg"><span class="best-value">69.12</span></td>
+</tr>
+</tbody>
+<tbody data-group="open_over_10b"><tr class="group-row"><th colspan="9" scope="rowgroup">Open-source models (&gt;10B)</th></tr>
+<tr class="" data-source-row="row_14"><th scope="row" id="comparison-row_14"><span class="model-cell"><span class="model-markers"><svg class="model-marker medical" role="img" aria-label="Medical model" viewBox="0 0 20 20"><use href="#medical-model-mark"></use></svg><span class="marker-space"></span></span><span>HealthGPT-14B</span></span></th>
+<td data-column="pmc_vqa" headers="comparison-row_14 bench-pmc_vqa"><span class="">56.40</span></td>
+<td data-column="vqa_rad" headers="comparison-row_14 bench-vqa_rad"><span class="">65.00</span></td>
+<td data-column="slake" headers="comparison-row_14 bench-slake"><span class="">66.10</span></td>
+<td data-column="pathvqa" headers="comparison-row_14 bench-pathvqa"><span class="runner-up-value">56.70</span></td>
+<td data-column="omnimedvqa" headers="comparison-row_14 bench-omnimedvqa"><span class="">75.20</span></td>
+<td data-column="medxqa" headers="comparison-row_14 bench-medxqa"><span class="">24.70</span></td>
+<td data-column="mmmu_med" headers="comparison-row_14 bench-mmmu_med"><span class="">49.60</span></td>
+<td data-column="avg" headers="comparison-row_14 bench-avg"><span class="">56.24</span></td>
+</tr>
+<tr class="" data-source-row="row_15"><th scope="row" id="comparison-row_15"><span class="model-cell"><span class="model-markers"><svg class="model-marker medical" role="img" aria-label="Medical model" viewBox="0 0 20 20"><use href="#medical-model-mark"></use></svg><span class="marker-space"></span></span><span>HuatuoGPT-V-34B</span></span></th>
+<td data-column="pmc_vqa" headers="comparison-row_15 bench-pmc_vqa"><span class="">56.60</span></td>
+<td data-column="vqa_rad" headers="comparison-row_15 bench-vqa_rad"><span class="">61.40</span></td>
+<td data-column="slake" headers="comparison-row_15 bench-slake"><span class="">69.50</span></td>
+<td data-column="pathvqa" headers="comparison-row_15 bench-pathvqa"><span class="">44.40</span></td>
+<td data-column="omnimedvqa" headers="comparison-row_15 bench-omnimedvqa"><span class="">74.00</span></td>
+<td data-column="medxqa" headers="comparison-row_15 bench-medxqa"><span class="">22.10</span></td>
+<td data-column="mmmu_med" headers="comparison-row_15 bench-mmmu_med"><span class="">51.80</span></td>
+<td data-column="avg" headers="comparison-row_15 bench-avg"><span class="">54.26</span></td>
+</tr>
+<tr class="" data-source-row="row_16"><th scope="row" id="comparison-row_16"><span class="model-cell"><span class="model-markers"><span class="marker-space"></span><span class="marker-space"></span></span><span>InternVL3-14B</span></span></th>
+<td data-column="pmc_vqa" headers="comparison-row_16 bench-pmc_vqa"><span class="">54.10</span></td>
+<td data-column="vqa_rad" headers="comparison-row_16 bench-vqa_rad"><span class="">66.30</span></td>
+<td data-column="slake" headers="comparison-row_16 bench-slake"><span class="">72.80</span></td>
+<td data-column="pathvqa" headers="comparison-row_16 bench-pathvqa"><span class="">48.00</span></td>
+<td data-column="omnimedvqa" headers="comparison-row_16 bench-omnimedvqa"><span class="">78.90</span></td>
+<td data-column="medxqa" headers="comparison-row_16 bench-medxqa"><span class="">23.10</span></td>
+<td data-column="mmmu_med" headers="comparison-row_16 bench-mmmu_med"><span class="">63.10</span></td>
+<td data-column="avg" headers="comparison-row_16 bench-avg"><span class="">58.04</span></td>
+</tr>
+<tr class="" data-source-row="row_17"><th scope="row" id="comparison-row_17"><span class="model-cell"><span class="model-markers"><span class="marker-space"></span><span class="marker-space"></span></span><span>InternVL2.5-38B</span></span></th>
+<td data-column="pmc_vqa" headers="comparison-row_17 bench-pmc_vqa"><span class="">57.20</span></td>
+<td data-column="vqa_rad" headers="comparison-row_17 bench-vqa_rad"><span class="">61.40</span></td>
+<td data-column="slake" headers="comparison-row_17 bench-slake"><span class="">70.30</span></td>
+<td data-column="pathvqa" headers="comparison-row_17 bench-pathvqa"><span class="">46.90</span></td>
+<td data-column="omnimedvqa" headers="comparison-row_17 bench-omnimedvqa"><span class="">79.90</span></td>
+<td data-column="medxqa" headers="comparison-row_17 bench-medxqa"><span class="">24.40</span></td>
+<td data-column="mmmu_med" headers="comparison-row_17 bench-mmmu_med"><span class="">61.60</span></td>
+<td data-column="avg" headers="comparison-row_17 bench-avg"><span class="">57.39</span></td>
+</tr>
+<tr class="" data-source-row="row_18"><th scope="row" id="comparison-row_18"><span class="model-cell"><span class="model-markers"><span class="marker-space"></span><span class="marker-space"></span></span><span>InternVL3-38B</span></span></th>
+<td data-column="pmc_vqa" headers="comparison-row_18 bench-pmc_vqa"><span class="">56.60</span></td>
+<td data-column="vqa_rad" headers="comparison-row_18 bench-vqa_rad"><span class="">65.40</span></td>
+<td data-column="slake" headers="comparison-row_18 bench-slake"><span class="">72.70</span></td>
+<td data-column="pathvqa" headers="comparison-row_18 bench-pathvqa"><span class="">51.00</span></td>
+<td data-column="omnimedvqa" headers="comparison-row_18 bench-omnimedvqa"><span class="">79.80</span></td>
+<td data-column="medxqa" headers="comparison-row_18 bench-medxqa"><span class="">25.20</span></td>
+<td data-column="mmmu_med" headers="comparison-row_18 bench-mmmu_med"><span class="">65.20</span></td>
+<td data-column="avg" headers="comparison-row_18 bench-avg"><span class="">59.41</span></td>
+</tr>
+<tr class="" data-source-row="row_19"><th scope="row" id="comparison-row_19"><span class="model-cell"><span class="model-markers"><svg class="model-marker medical" role="img" aria-label="Medical model" viewBox="0 0 20 20"><use href="#medical-model-mark"></use></svg><span class="marker-space"></span></span><span>LINGSHU-32B</span></span></th>
+<td data-column="pmc_vqa" headers="comparison-row_19 bench-pmc_vqa"><span class="">57.90</span></td>
+<td data-column="vqa_rad" headers="comparison-row_19 bench-vqa_rad"><span class="best-value">76.50</span></td>
+<td data-column="slake" headers="comparison-row_19 bench-slake"><span class="best-value">89.20</span></td>
+<td data-column="pathvqa" headers="comparison-row_19 bench-pathvqa"><span class="best-value">65.90</span></td>
+<td data-column="omnimedvqa" headers="comparison-row_19 bench-omnimedvqa"><span class="runner-up-value">83.40</span></td>
+<td data-column="medxqa" headers="comparison-row_19 bench-medxqa"><span class="">30.90</span></td>
+<td data-column="mmmu_med" headers="comparison-row_19 bench-mmmu_med"><span class="">62.30</span></td>
+<td data-column="avg" headers="comparison-row_19 bench-avg"><span class="">66.59</span></td>
+</tr>
+<tr class="" data-source-row="row_20"><th scope="row" id="comparison-row_20"><span class="model-cell"><span class="model-markers"><span class="marker-space"></span><span class="marker-space"></span></span><span>Qwen3.5-35B (Base)</span></span></th>
+<td data-column="pmc_vqa" headers="comparison-row_20 bench-pmc_vqa"><span class="runner-up-value">62.40</span></td>
+<td data-column="vqa_rad" headers="comparison-row_20 bench-vqa_rad"><span class="">70.50</span></td>
+<td data-column="slake" headers="comparison-row_20 bench-slake"><span class="">70.10</span></td>
+<td data-column="pathvqa" headers="comparison-row_20 bench-pathvqa"><span class="">49.15</span></td>
+<td data-column="omnimedvqa" headers="comparison-row_20 bench-omnimedvqa"><span class="">83.20</span></td>
+<td data-column="medxqa" headers="comparison-row_20 bench-medxqa"><span class="runner-up-value">60.00</span></td>
+<td data-column="mmmu_med" headers="comparison-row_20 bench-mmmu_med"><span class="runner-up-value">80.00</span></td>
+<td data-column="avg" headers="comparison-row_20 bench-avg"><span class="runner-up-value">67.91</span></td>
+</tr>
+<tr class="medevo-row" data-source-row="row_21"><th scope="row" id="comparison-row_21"><span class="model-cell"><span class="model-markers"><svg class="model-marker medical" role="img" aria-label="Medical model" viewBox="0 0 20 20"><use href="#medical-model-mark"></use></svg><svg class="model-marker repair" role="img" aria-label="Trajectory-repair method" viewBox="0 0 20 20"><use href="#repair-method-mark"></use></svg></span><span><strong>MedEvo (35B)</strong></span></span></th>
+<td data-column="pmc_vqa" headers="comparison-row_21 bench-pmc_vqa"><span class="best-value">64.63</span></td>
+<td data-column="vqa_rad" headers="comparison-row_21 bench-vqa_rad"><span class="runner-up-value">75.83</span></td>
+<td data-column="slake" headers="comparison-row_21 bench-slake"><span class="runner-up-value">80.30</span></td>
+<td data-column="pathvqa" headers="comparison-row_21 bench-pathvqa"><span class="">56.01</span></td>
+<td data-column="omnimedvqa" headers="comparison-row_21 bench-omnimedvqa"><span class="best-value">83.97</span></td>
+<td data-column="medxqa" headers="comparison-row_21 bench-medxqa"><span class="best-value">66.50</span></td>
+<td data-column="mmmu_med" headers="comparison-row_21 bench-mmmu_med"><span class="best-value">84.02</span></td>
+<td data-column="avg" headers="comparison-row_21 bench-avg"><span class="best-value">73.04</span></td>
+</tr>
+</tbody>
+</table></div>
+  <p class="small-note" id="comparison-notes"><strong>Bold</strong> / <span class="runner-up-value">underline</span>: best / second-best within each source group, with shared ranks for ties. Avg.: reported unweighted seven-benchmark mean. MedXQA: MedXpertQA-MM; MMMU-Med: medical subset of MMMU.</p>
 </section>
 
 <section id="results" class="results-section" aria-labelledby="results-title">
