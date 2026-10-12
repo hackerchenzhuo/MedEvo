@@ -1,4 +1,4 @@
-<a href="https://www.antgroup.com/"><img src="docs/assets/logos/ant-group-symbol.png" height="32" alt="Ant Group"></a>
+<img src="docs/assets/logos/medevo.svg" height="54" alt="MedEvo">
 
 # MedEvo: Medical Reasoning Evolution<br>through Knowledge Navigation
 
@@ -18,8 +18,10 @@
 [Jian Wang](https://openreview.net/profile?id=~Jian_Wang25)<sup>2</sup>,
 [Lijun Wu](https://openreview.net/profile?id=~Lijun_Wu1)<sup>3,4†</sup>
 
-<sup>1</sup>Zhejiang University · <sup>2</sup>Ant Group<br>
-<sup>3</sup>Shanghai Artificial Intelligence Laboratory · <sup>4</sup>Shanghai Jiao Tong University
+<a href="https://www.zju.edu.cn/"><img src="docs/assets/logos/zhejiang-university-symbol.png" height="30" alt="Zhejiang University"></a> <sup>1</sup>Zhejiang University ·
+<a href="https://www.antgroup.com/"><img src="docs/assets/logos/ant-group-symbol.png" height="30" alt="Ant Group"></a> <sup>2</sup>Ant Group ·
+<a href="https://www.shlab.org.cn/"><img src="docs/assets/logos/shanghai-ai-lab-symbol.png" height="30" alt="Shanghai Artificial Intelligence Laboratory"></a> <sup>3</sup>Shanghai Artificial Intelligence Laboratory ·
+<a href="https://www.sjtu.edu.cn/"><img src="docs/assets/logos/shanghai-jiao-tong-symbol.png" height="30" alt="Shanghai Jiao Tong University"></a> <sup>4</sup>Shanghai Jiao Tong University
 
 <sup>*</sup>Equal contribution · <sup>†</sup>Corresponding author
 
@@ -49,6 +51,8 @@ Unweighted mean accuracy across seven medical multimodal benchmarks, using SFT a
 | Qwen3.5-9B | 65.57 | **69.12** | 3 |
 | Qwen3.5-35B | 67.91 | **73.04** | 3 |
 | Qwen3.5-397B | 71.83 | **74.95** | 2 |
+
+[Complete 21-model comparison and benchmark scores →](https://pork-pay.github.io/MedEvo/#comparison)
 
 Full settings, benchmark-level results, and ablations are in the [paper](https://pork-pay.github.io/MedEvo/assets/medevo.pdf).
 
