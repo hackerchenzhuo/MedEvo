@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 590" role="img" aria-labelledby="scene-title scene-description" data-mobile="true">
+<title id="scene-title">Knowledge Navigation in MedEvo</title>
+<desc id="scene-description">A schematic. Supported reasoning is preserved while the first erroneous operation is rolled back. A gold-blind auditor supplies an answer-free hint and the same student regenerates the suffix. A screened repair replaces a training target in the evolving dataset. Each round trains from the same base model M zero. Independent feedback identifies remaining gaps and redirects the next training questions.</desc>
+<style>
+svg{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;background:#fbfcfa;color:#213e43}text{font-size:18px;fill:#34585e}text.small{font-size:16px;fill:#708387}text.label{font-size:11px;letter-spacing:1.8px;fill:#648084;font-weight:650}text.good-label{fill:#176d76;font-size:17px}text.bad-label{fill:#9b615a;font-size:16px}text.white{fill:white;font-size:20px;font-weight:600}text.base{font-size:17px;fill:#44676d}text.title{font-weight:650;fill:#24484e}text.violet{fill:#735788;font-size:17px}.route{stroke:#dce6e3;stroke-width:2.3;stroke-linecap:round;stroke-linejoin:round}.draw-blue{stroke:#247d85;stroke-width:3}.draw-red{stroke:#c18276;stroke-width:2.5}.draw-violet{stroke:#85689a;stroke-width:3}.rollback{stroke:#b58579;stroke-width:1.8;stroke-dasharray:5 6}.node{stroke-width:1.8;fill:#fcfdfa}.node.good{stroke:#78a9a8;fill:#edf5f1}.node.bad{stroke:#c59d90;fill:#f8f0eb}.node.repaired{stroke:#247d85;fill:#e6f3ec}.check{fill:none;stroke:#297c75;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}.cross{stroke:#b4776d;stroke-width:1.9;stroke-linecap:round}.plain{fill:#fff;stroke:#cad9d4;stroke-width:1.5}.paper-line{stroke:#b5cac6;stroke-width:2;stroke-linecap:round}.violet-line{stroke:#957cac;stroke-width:2;stroke-linecap:round}.ghost{fill:#edf1eb;stroke:#d3ded7;stroke-width:1.2}.active-target{fill:#e1f0e8;stroke:#5f9b87;stroke-width:1.4}.hint-shape{fill:#fff9e9;stroke:#c5b786;stroke-width:1.3}.sft{fill:#edf5f1;stroke:#95b2a9;stroke-width:1.5}.feedback-shape{fill:#f4eef7;stroke:#c4b5ce;stroke-width:1.4}.small-arrow{fill:none;stroke:#729994;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.ring{fill:none;stroke:#b88072;stroke-width:1.5;stroke-dasharray:4 5}.marker-blue{fill:#247d85}.marker-violet{fill:#85689a}.boundary{stroke:#89aaa3;stroke-width:1;stroke-dasharray:3 5}
+</style>
+<defs><marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M1 1L8 5L1 9" fill="none" stroke="#247d85" stroke-width="1.7"/></marker><marker id="arrow-violet" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M1 1L8 5L1 9" fill="none" stroke="#85689a" stroke-width="1.7"/></marker></defs>
+<text x="23" y="23" class="label" text-anchor="start">LOCAL REPAIR</text>
+<text x="310" y="553" class="label" text-anchor="start">DATA EVOLUTION</text>
+<g id="outer-track">
+<path id="target-track" d="M498 164C534 194 523 343 487 344" class="route " fill="none"/><path id="data-track" d="M390 344H300" class="route " fill="none"/><path id="model-track" d="M228 344H135" class="route " fill="none"/><path id="selection-track" d="M98 375C98 463 210 458 210 479" class="route " fill="none"/><path id="return-track" d="M124 503C19 503 22 194 45 120" class="route " fill="none"/>
+</g>
+<g id="trace-core">
+<path id="prefix-path" d="M77 88H258" class="route draw-blue" fill="none"/>
+<g id="student" transform="translate(45 88)"><circle r="31" fill="#205f68"/><text x="0" y="7" class="white" text-anchor="middle">Mₜ</text><text x="0" y="51" class="small" text-anchor="middle">Student</text></g>
+<g id="prefix-0" transform="translate(149 88)"><circle r="22" class="node good"/><path d="M-7 0l5 5 10-11" class="check"/></g><g id="prefix-1" transform="translate(258 88)"><circle r="22" class="node good"/><path d="M-7 0l5 5 10-11" class="check"/></g>
+<text x="205" y="48" class="good-label" text-anchor="middle">Supported prefix</text>
+<g id="failed-branch" opacity=".16"><path id="wrong-path" d="M280 88H473" class="route draw-red" fill="none"/><g id="wrong-0" transform="translate(375 88)"><circle r="22" class="node bad"/><path d="M-6-6L6 6M6-6L-6 6" class="cross"/></g><g id="wrong-1" transform="translate(473 88)"><circle r="22" class="node bad"/><path d="M-6-6L6 6M6-6L-6 6" class="cross"/></g><text x="426" y="47" class="bad-label" text-anchor="middle">First error → failed suffix</text></g>
+
+
+<path id="safe-boundary" d="M310 64v105" class="boundary"/>
+<g id="new-branch"><path id="correct-path" d="M280 88C332 88 332 164 349 164H476" class="route draw-blue" fill="none"/><g id="corrected-0" transform="translate(373 164)"><circle r="22" class="node repaired"/><path d="M-7 0l5 5 10-11" class="check"/></g><g id="corrected-1" transform="translate(476 164)"><circle r="22" class="node repaired"/><path d="M-7 0l5 5 10-11" class="check"/></g><text x="372" y="205" class="good-label" text-anchor="middle">New suffix</text><text x="476" y="205" class="small" text-anchor="middle">Screened</text></g>
+<g id="hint" transform="translate(413 239)"><rect x="-75" y="-18" width="150" height="36" rx="18" class="hint-shape"/><text x="0" y="5" class="base" text-anchor="middle">Answer-free hint</text><text x="0" y="35" class="small" text-anchor="middle">Gold-blind auditor</text></g>
+<path id="hint-path" d="M393 221C329 214 310 174 310 111" class="route draw-blue" fill="none"/>
+</g>
+<g id="dataset" transform="translate(438 344)">
+<rect x="-38" y="-30" width="78" height="50" rx="5" class="ghost"/><rect x="-43" y="-24" width="82" height="51" rx="5" class="plain"/>
+<g id="old-target" opacity="0"><rect x="-49" y="-16" width="91" height="47" rx="5" class="plain"/><path d="M-33-2H25M-33 7H17M-33 16H25" class="paper-line"/></g>
+<g id="new-target"><rect x="-49" y="-16" width="91" height="47" rx="5" class="active-target"/><path d="M-33-2H6M-33 7H0M-33 16H6" class="paper-line"/><g transform="translate(24 7)"><path d="M-7 0l5 5 10-11" class="check"/></g></g>
+<text x="0" y="55" class="title" text-anchor="middle">Evolving dataset</text><text x="0" y="72" class="small" text-anchor="middle">Replace one target</text>
+</g>
+<path id="target-path" d="M498 164C534 194 523 343 487 344" class="route draw-blue" fill="none"/><path id="data-path" d="M390 344H300" class="route draw-blue" fill="none"/>
+<g id="training">
+<g transform="translate(264 344)"><circle r="34" class="sft"/><text x="0" y="6" class="title" text-anchor="middle">SFT</text></g>
+<g id="base-model" transform="translate(264 269)"><rect x="-65" y="-17" width="130" height="34" rx="17" class="plain"/><text x="0" y="5" class="base" text-anchor="middle">Same base M₀</text></g>
+<path id="base-path" d="M264 290V308" class="route draw-blue" fill="none"/><path id="model-path" d="M228 344H135" class="route draw-blue" fill="none"/><text x="182" y="323" class="base" text-anchor="middle">Mₜ₊₁</text>
+</g>
+<g id="evaluation" transform="translate(98 344)"><circle r="29" class="feedback-shape"/><path d="M-14 4l9-11 8 15 12-14" class="violet-line" fill="none"/><text x="0" y="-43" class="title" text-anchor="middle">Evaluate</text></g>
+<g id="feedback" transform="translate(97 420)"><rect x="-75" y="-17" width="150" height="34" rx="5" class="feedback-shape"/><text x="0" y="5" class="violet" text-anchor="middle">Held-out feedback</text></g>
+<path id="feedback-path" d="M97 403V373" class="route draw-violet" fill="none"/><path id="selection-path" d="M98 375C98 463 210 458 210 479" class="route draw-violet" fill="none"/>
+<g id="selection" transform="translate(180 503)">
+<rect x="-50" y="-29" width="89" height="51" rx="5" class="ghost" transform="rotate(-9)"/><rect x="-42" y="-22" width="87" height="50" rx="5" class="plain" transform="rotate(6)"/>
+<g id="selected-question"><rect x="-47" y="-24" width="94" height="52" rx="5" class="feedback-shape"/><rect x="-33" y="-10" width="17" height="17" rx="3" fill="#c4d8d0"/><path d="M-8-7H31M-8 1H22M-32 17H31" class="paper-line"/><path d="M30-15l5 5 9-10" class="violet-line" fill="none"/></g>
+<text x="0" y="54" class="title" text-anchor="middle">Next questions</text><text x="0" y="72" class="small" text-anchor="middle">Medical tags + errors</text>
+</g>
+<path id="return-path" d="M124 503C19 503 22 194 45 120" class="route draw-violet" fill="none"/>
+
+
+
+
+
+</svg>
