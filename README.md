@@ -1,57 +1,79 @@
-<div align="center">
+<img src="docs/assets/logos/medevo.svg" height="54" alt="MedEvo">
 
 # MedEvo: Medical Reasoning Evolution<br>through Knowledge Navigation
 
-**Preserve valid reasoning. Repair local failures. Learn from independent feedback.**
+[Paper](https://pork-pay.github.io/MedEvo/assets/medevo.pdf) · [Project page](https://pork-pay.github.io/MedEvo/) · [GitHub](https://github.com/pork-pay/MedEvo)
 
-[![Paper](https://img.shields.io/badge/Paper-PDF-b31b1b.svg)](docs/assets/medevo.pdf)
-[![Website](https://img.shields.io/badge/Website-MedEvo-287db1.svg)](https://pork-pay.github.io/MedEvo/)
+[Xiaoliang Wang](https://openreview.net/profile?id=~Wang_Xiaoliang2)<sup>1,2*</sup>,
+[Zhuo Chen](https://openreview.net/profile?id=~Zhuo_Chen3)<sup>2*</sup>,
+[Chuanyang Zheng](https://openreview.net/profile?id=~Chuanyang_Zheng2)<sup>2</sup>,
+[Quanbin Wang](https://openreview.net/profile?id=~Quanbin_Wang1)<sup>2</sup>,
+[Jiangwei Lao](https://openreview.net/profile?id=~Jiangwei_Lao1)<sup>2</sup>,
+[Yingao Liu](https://openreview.net/profile?id=~Yingao_Liu1)<sup>2</sup>,
+[Jiajia Liu](https://openreview.net/profile?id=~Jiajia_Liu1)<sup>2</sup>,
+[Jinming Cao](https://openreview.net/profile?id=~Jinming_Cao1)<sup>2</sup>,
+[Honglin Lin](https://openreview.net/profile?id=~Honglin_Lin2)<sup>3,4</sup>,
+[Zhihong Lu](https://openreview.net/profile?id=~Zhihong_Lu2)<sup>2</sup>,
+[Hao Jin](https://openreview.net/profile?id=~Hao_Jin4)<sup>1</sup>,
+[Jian Wang](https://openreview.net/profile?id=~Jian_Wang25)<sup>2</sup>,
+[Lijun Wu](https://openreview.net/profile?id=~Lijun_Wu1)<sup>2,3†</sup>
 
-Wang Xiaoliang<sup>1,2*</sup>, Zhuo Chen<sup>2*</sup>, Chuanyang Zheng<sup>2</sup>,
-Quanbin Wang<sup>2</sup>, Jiangwei Lao<sup>2</sup>, Yingao Liu<sup>2</sup>,
-Jiajia Liu<sup>2</sup>, Jinming Cao<sup>2</sup>, Honglin Lin<sup>3,4</sup>,
-Zhihong Lu<sup>2</sup>, Hao Jin<sup>1</sup>, Jian Wang<sup>2</sup>, Lijun Wu<sup>3,4†</sup>
-
-<sup>1</sup>Zhejiang University · <sup>2</sup>Ant Group<br>
-<sup>3</sup>Shanghai Artificial Intelligence Laboratory · <sup>4</sup>Shanghai Jiao Tong University
+<a href="https://www.zju.edu.cn/"><img src="docs/assets/logos/zhejiang-university-symbol.png" height="30" alt="Zhejiang University"></a> <sup>1</sup>Zhejiang University ·
+<a href="https://www.antgroup.com/"><img src="docs/assets/logos/ant-group-symbol.png" height="30" alt="Ant Group"></a> <sup>2</sup>Ant Group ·
+<a href="https://www.shlab.org.cn/"><img src="docs/assets/logos/shanghai-ai-lab-symbol.png" height="30" alt="Shanghai Artificial Intelligence Laboratory"></a> <sup>3</sup>Shanghai Artificial Intelligence Laboratory ·
+<a href="https://www.sjtu.edu.cn/"><img src="docs/assets/logos/shanghai-jiao-tong-symbol.png" height="30" alt="Shanghai Jiao Tong University"></a> <sup>4</sup>Shanghai Jiao Tong University
 
 <sup>*</sup>Equal contribution · <sup>†</sup>Corresponding author
 
-</div>
+## Watch Knowledge Navigation
 
-## Overview
+[![Knowledge Navigation: preserve a supported prefix, repair the suffix, update the dataset, and let independent feedback redirect the next questions.](docs/assets/knowledge-navigation.gif)](https://pork-pay.github.io/MedEvo/#method)
 
-**MedEvo uses medical knowledge to guide local reasoning repair and subsequent learning.**
-An auditor that cannot access the reference answer locates the first consequential error and
-provides a minimal, answer-free hint. The same student preserves its valid prefix and regenerates
-the suffix. Medical-tag and error-type feedback on a fixed, held-out set guides the next round's
-data selection.
+**Medical knowledge repairs a failed trace; independent feedback decides what the student learns next.**
 
-Accepted repairs retain the recovery cue and use full-response supervised fine-tuning. Each round
-trains from the original base model on the updated dataset.
+A gold-blind auditor supplies an answer-free hint. The same student preserves its supported prefix and regenerates the suffix. Screened targets update the dataset; each SFT round starts from the **same base model**. Held-out feedback guides the next training questions.
 
-![Knowledge Navigation in MedEvo](docs/assets/workflow.png)
+[**Play the animated explanation →**](https://pork-pay.github.io/MedEvo/#method)
 
-## Highlights
+## Two observations
 
-- **Local repair:** preserve supported reasoning and target the failed operation with medical knowledge.
-- **Feedback-driven evolution:** independent feedback directs training toward remaining capability gaps.
-- **Gains across scales:** seven-benchmark mean accuracy improves from **65.57% → 69.12%** (9B),
-  **67.91% → 73.04%** (35B), and **71.83% → 74.95%** (397B), using SFT alone.
+- **Repair success is not learning value.** Longest-8k questions have lower repair success than random-8k questions (55.70% versus 67.50%), but yield higher downstream accuracy (66.78% versus 64.35%). This comparison does not separate trace length from difficulty.
+- **The feedback source matters.** Training-error feedback ends at 64.01% benchmark accuracy; independent fixed-set feedback reaches 69.12%. Both start from 65.57% on Qwen3.5-9B.
 
-[**Method, results, and analysis → Project website**](https://pork-pay.github.io/MedEvo/)
+[Evidence and original figure →](https://pork-pay.github.io/MedEvo/#evidence)
 
-The paper and project page are available. Training and evaluation code is not yet included.
+## Results
+
+Unweighted mean accuracy across seven medical multimodal benchmarks, using SFT alone:
+
+| Backbone | Base (%) | MedEvo (%) | Rounds |
+|:--|--:|--:|--:|
+| Qwen3.5-9B | 65.57 | **69.12** | 3 |
+| Qwen3.5-35B | 67.91 | **73.04** | 3 |
+| Qwen3.5-397B | 71.83 | **74.95** | 2 |
+
+[Complete 21-model comparison and benchmark scores →](https://pork-pay.github.io/MedEvo/#comparison)
+
+Full settings, benchmark-level results, and ablations are in the [paper](https://pork-pay.github.io/MedEvo/assets/medevo.pdf).
+
+## Resources
+
+This repository hosts the paper and project page. **Implementation and training-data files are not released.**
+
+[Related project: ECG-RSI](https://pork-pay.github.io/ECG-RSI/) studies measurable ECG waveform supervision and feedback-guided intervention selection.
+
+To preview the static page locally, run `python3 -m http.server 8000 --directory docs` and open <http://localhost:8000/>.
 
 ## Citation
 
 ```bibtex
 @misc{wang2026medevo,
   title  = {MedEvo: Medical Reasoning Evolution through Knowledge Navigation},
-  author = {Wang, Xiaoliang and Chen, Zhuo and Zheng, Chuanyang and Wang, Quanbin
-            and Lao, Jiangwei and Liu, Yingao and Liu, Jiajia and Cao, Jinming
-            and Lin, Honglin and Lu, Zhihong and Jin, Hao and Wang, Jian and Wu, Lijun},
+  author = {Wang, Xiaoliang and Chen, Zhuo and Zheng, Chuanyang and
+            Wang, Quanbin and Lao, Jiangwei and Liu, Yingao and Liu, Jiajia and
+            Cao, Jinming and Lin, Honglin and Lu, Zhihong and Jin, Hao and
+            Wang, Jian and Wu, Lijun},
   year   = {2026},
-  url    = {https://github.com/pork-pay/MedEvo}
+  url    = {https://pork-pay.github.io/MedEvo/}
 }
 ```
