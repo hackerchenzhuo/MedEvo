@@ -16,7 +16,7 @@
 [Zhihong Lu](https://openreview.net/profile?id=~Zhihong_Lu2)<sup>2</sup>,
 [Hao Jin](https://openreview.net/profile?id=~Hao_Jin4)<sup>1</sup>,
 [Jian Wang](https://openreview.net/profile?id=~Jian_Wang25)<sup>2</sup>,
-[Lijun Wu](https://openreview.net/profile?id=~Lijun_Wu1)<sup>3,4†</sup>
+[Lijun Wu](https://openreview.net/profile?id=~Lijun_Wu1)<sup>2,3†</sup>
 
 <a href="https://www.zju.edu.cn/"><img src="docs/assets/logos/zhejiang-university-symbol.png" height="30" alt="Zhejiang University"></a> <sup>1</sup>Zhejiang University ·
 <a href="https://www.antgroup.com/"><img src="docs/assets/logos/ant-group-symbol.png" height="30" alt="Ant Group"></a> <sup>2</sup>Ant Group ·
