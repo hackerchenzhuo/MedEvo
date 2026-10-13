@@ -55,3 +55,63 @@ details{border-top:1px solid var(--line);margin-top:23px}summary{list-style:none
 .main-comparison{min-width:1000px;font-size:14px}.main-comparison .model-column{width:210px}.main-comparison th,.main-comparison td{padding:12px 10px}.main-comparison th[scope=row]{font-size:14px}.main-comparison tbody td{font-size:14px}.main-comparison .group-row th{font-size:14px}.main-comparison caption{font-size:13px}.model-cell{grid-template-columns:37px minmax(0,1fr);gap:4px}.model-marker,.marker-space{width:17px;height:17px}
 .scale-results span{font-size:14px}.scale-results small,.results-heading>p{font-size:13px}.resource-links,.resources-section>p{font-size:13px}footer{font-size:12px}}
 @media(max-width:370px){nav{flex-wrap:wrap}.nav-links{width:100%;justify-content:space-between;margin-top:5px}.stage-buttons button{font-size:0;padding-inline:3px}.stage-buttons button span{font-size:12px;margin-left:0}.feedback-comparison strong{font-size:22px}}
+
+/* Reference-aligned publication header; animation and scientific content remain unchanged. */
+@font-face {
+  font-family: "Google Sans Flex";
+  src: url("assets/fonts/google-sans-flex-latin.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+.hero { font-family: "Google Sans Flex", "Helvetica Neue", Helvetica, Arial, sans-serif; padding: 30px 0 28px; }
+.hero .institution-banner { display: grid; grid-template-columns: 1fr .75fr 1.35fr 1.3fr; align-items: center; gap: 0; max-width: 1080px; margin: 0 auto 28px; padding: 0; list-style: none; }
+.hero .institution-identity { display: flex; align-items: center; justify-content: center; gap: 12px; min-height: 78px; padding: 0 16px; border-left: 1px solid var(--line); }
+.hero .institution-identity:first-child { border-left: 0; padding-left: 0; }
+.hero .institution-identity:last-child { padding-right: 0; }
+.hero .institution-symbol { width: 66px; height: 66px; flex: 0 0 66px; object-fit: contain; }
+.hero .institution-shlab .institution-symbol { width: 88px; flex-basis: 88px; }
+.hero .institution-name { font-size: 16px; font-weight: 500; line-height: 1.3; text-align: left; }
+.hero h1 { max-width: 1040px; margin: 0 auto; font-family: inherit; font-size: 36px; font-weight: 700; line-height: 1.14; letter-spacing: -.024em; }
+.hero h1 .project-name { display: inline; font: inherit; letter-spacing: inherit; white-space: nowrap; }
+.hero h1 .hero-mark { display: inline-block; width: auto; height: 42px; margin-right: 5px; vertical-align: -7px; object-fit: contain; }
+.hero .authors-section { width: auto; max-width: none; margin: 0; padding: 0; border: 0; }
+.hero .authors { display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: 5px 18px; max-width: 1040px; margin: 23px auto 0; padding: 0; list-style: none; font-size: 15px; font-weight: 400; line-height: 1.65; }
+.hero .authors > * { white-space: nowrap; }
+.hero .authors a { font-family: inherit; font-size: inherit; font-weight: inherit; }
+.hero .affiliations { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: 6px 18px; max-width: 1060px; margin: 14px auto 0; padding: 0; list-style: none; font-size: 14px; line-height: 1.5; }
+.hero .affiliations li { display: block; max-width: none; text-align: center; white-space: nowrap; }
+.hero .affiliations li > a { display: inline; width: auto; }
+.hero .author-note { display: flex; flex-wrap: nowrap; justify-content: center; align-items: baseline; gap: 11px; margin: 12px 0 0; font-size: 13px; line-height: 1.5; white-space: nowrap; }
+.hero .author-note .note-entry { display: inline-flex; align-items: baseline; gap: 5px; padding: 0; }
+.hero .author-note .note-symbol { font-size: 16px; font-weight: 700; line-height: 1; }
+.hero .author-note .note-divider { padding: 0; }
+.hero .thesis, .hero .hero-idea { max-width: 1020px; margin: 21px auto 0; font-family: inherit; font-size: 18px; font-weight: 600; line-height: 1.5; letter-spacing: -.01em; }
+.hero .hero-links { display: flex; align-items: center; justify-content: center; gap: 16px; min-height: 34px; margin: 18px auto 0; font-size: 14px; line-height: 1.4; }
+.hero .hero-links a { font-family: inherit; font-size: 14px; font-weight: 600; line-height: 1.4; }
+@media (max-width: 900px) {
+  .hero .institution-identity { flex-direction: column; gap: 9px; padding-inline: 12px; }
+  .hero .institution-name { font-size: 14px; text-align: center; }
+}
+@media (max-width: 640px) {
+  .hero { padding: 23px 0; }
+  .hero .institution-banner { grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: start; gap: 0; margin-bottom: 23px; }
+  .hero .institution-identity { gap: 8px; min-height: 0; padding-inline: 6px; }
+  .hero .institution-symbol { width: 52px; height: 52px; flex-basis: auto; }
+  .hero .institution-shlab .institution-symbol { width: 68px; height: 52px; flex-basis: auto; }
+  .hero .institution-name { font-size: 12px; line-height: 1.3; }
+  .hero h1 { font-size: 27px; font-weight: 700; line-height: 1.18; letter-spacing: -.022em; }
+  .hero h1 .title-break { display: none; }
+  .hero h1 .hero-mark { height: 34px; width: auto; margin-right: 4px; vertical-align: -6px; }
+  .hero .authors { max-width: 100%; gap: 4px 14px; margin-top: 18px; font-size: 13px; line-height: 1.65; }
+  .hero .affiliations { gap: 5px 12px; max-width: 100%; margin-top: 12px; font-size: 12px; line-height: 1.5; }
+  .hero .affiliations li { max-width: 100%; white-space: normal; }
+  .hero .author-note { gap: 7px; margin-top: 11px; font-size: 12px; }
+  .hero .author-note .note-entry { gap: 4px; }
+  .hero .author-note .note-symbol { font-size: 15px; }
+  .hero .thesis, .hero .hero-idea { margin-top: 18px; font-size: 15px; line-height: 1.5; }
+  .hero .hero-links { gap: 14px; min-height: 32px; margin-top: 15px; font-size: 13px; }
+  .hero .hero-links a { font-size: 13px; }
+}
+
+main > section:not(.evolution) :is(p, h2, h3, h4, summary) { font-family: "Google Sans Flex", "Helvetica Neue", Helvetica, Arial, sans-serif; }
